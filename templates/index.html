@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Password Generator</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+        <form id="passwordForm">
+            <label for="length">Password Length:</label>
+            <input type="number" id="length" name="length" min="6" max="128" required>
+            <div class="slidecontainer">
+                <input type="range" min="0" max="6" value="0" class="slider" id="splchars" disabled>
+                <p>Value: <span id="splcharsval">0</span></p>
+            </div>
+            <div class="slidecontainer">
+                <input type="range" min="0" max="6" value="0" class="slider" id="nums" disabled>
+                <p>Value: <span id="numsval">0</span></p>
+            </div>
+            <button type="submit">Generate</button>
+        </form>
+        <p id="passwordResult"></p>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
