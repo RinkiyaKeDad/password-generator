@@ -13,8 +13,8 @@ def generate_password():
     data = request.get_json()
     print(data)
     length = int(data['length'])
-    splchars = int(data['splchars'])
-    nums = int(data['nums'])
+    nums = bool(data['nums'])
+    splchars = bool(data['splchars'])
 
     characters = string.ascii_letters 
     spls = string.punctuation
@@ -22,15 +22,36 @@ def generate_password():
 
     print(characters)
     password = ''
+    letterCount = 0
+    numCount = 0
+    splcharCount = 0
 
-    while splchars > 0:
-        password += random.choice(spls)
-        splchars -= 1
-        length -=1 
+    # fix lenghts
+    if nums and splchars:
+        letterCount = random.randint(1, length - 2)
+        numCount = random.randint(1, length - letterCount - 1)
+        splcharCount = length - letterCount - numCount
 
-    while nums > 0:
+    elif nums:
+        numCount = random.randint(1,length-1)
+    
+    elif splchars:
+        splcharCount = random.randint(1,length-1)
+
+    print(numCount)
+    print(splcharCount)
+    print(letterCount)
+    print(length)
+
+    # generate password
+    while numCount > 0:
         password += random.choice(numbers)
-        nums -= 1
+        numCount -= 1
+        length -=1
+
+    while splcharCount > 0:
+        password += random.choice(spls)
+        splcharCount -= 1
         length -=1 
     
     while length > 0:
@@ -39,6 +60,7 @@ def generate_password():
 
     # randomize the password
     password = ''.join(random.sample(password,len(password)))
+    print(password)
 
     return jsonify(password=password)
 

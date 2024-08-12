@@ -1,32 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <!-- <link rel="stylesheet" href="../static/style.css" /> -->
     <title>Password Generator</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <h1>Password Generator</h1>
-        <form id="passwordForm">
-            <label for="length">Password Length:</label>
-            <input type="number" id="length" name="length" min="6" max="128" required>
-            <div class="slidecontainer">
-                <input type="range" min="0" max="6" value="0" class="slider" id="splchars" disabled>
-                <p>Value: <span id="splcharsval">0</span></p>
-            </div>
-            <div class="slidecontainer">
-                <input type="range" min="0" max="6" value="0" class="slider" id="nums" disabled>
-                <p>Value: <span id="numsval">0</span></p>
-            </div>
-            <button type="submit">Generate</button>
-        </form>
-        <p id="passwordResult"></p>
-    </div>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
-</body>
+      <header>
+        <h1>
+          A no nonsense password generator to safehaurd your accounts from
+          hackers!
+        </h1>
+        <p>
+          Use our online tool to create a secure password. We recommend at least
+          using 12 characters with numbers and symbols for the best protection.
+        </p>
+      </header>
 
+      <div class="result-container">
+        <p id="passwordResult">generated password</p>
+      </div>
+
+      <div class="options-container">
+        <h2>Customize your password</h2>
+
+        <form id="passwordForm">
+          <div class="len-container">
+            <label for="length">Password Length: </label>
+            <span id="passlenval">12</span>
+            <input
+              type="range"
+              min="1"
+              max="50"
+              value="12"
+              class="slider"
+              id="passlen"
+            />
+          </div>
+
+          <div class="toggles">
+            <div class="nums-container">
+              <input type="checkbox" id="nums" name="nums" checked />
+              <label for="nums"> Numbers</label>
+            </div>
+            <div class="splchars-container">
+              <input type="checkbox" id="splchars" name="splchars" checked />
+              <label for="splchars"> Special Characters</label>
+            </div>
+          </div>
+
+          <button type="submit">Generate</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
 </html>
