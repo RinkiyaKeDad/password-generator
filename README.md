@@ -30,7 +30,7 @@ curl -X POST http://127.0.0.1:5000/generate-password \
 
 ### TODOs
 
-- Done
+- Add copy to clip board modal (see inspo)
 
 ---
 
