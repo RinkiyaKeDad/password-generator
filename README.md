@@ -22,9 +22,15 @@ curl -X POST http://127.0.0.1:5000/generate-password \
 
 ---
 
+### Deployment
+
+- [Google Cloud Run guide](https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service)
+
+---
+
 ### TODOs
 
-- UI is trash
+- Done
 
 ---
 
@@ -59,9 +65,9 @@ curl -X POST http://127.0.0.1:5000/generate-password \
 - The issue lies in the type of values you are using in your comparison. In JavaScript, values from form inputs are retrieved as strings, so when you perform the addition of this.value and numsSlider.value, you are actually concatenating strings rather than adding numbers.
   To fix this, you need to convert the string values to numbers before performing the comparison:
   `  if (Number(this.value) + Number(numsSlider.value) > Number(length)) {
-      console.log("going in spl if")
-      var updatedValue = length - this.value
-      numsSlider.value = updatedValue
-      numsSliderValue.textContent = updatedValue
-  }`
+    console.log("going in spl if")
+    var updatedValue = length - this.value
+    numsSlider.value = updatedValue
+    numsSliderValue.textContent = updatedValue
+}`
 - Livereload to hot reload changes: https://stackoverflow.com/questions/56972813/how-to-automate-browser-refresh-when-developing-a-flask-app-with-python

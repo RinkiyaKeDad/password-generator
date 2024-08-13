@@ -7,3 +7,4 @@ livereload==2.7.0
 MarkupSafe==2.1.5
 tornado==6.4.1
 Werkzeug==3.0.3
+gunicorn==22.0.0
