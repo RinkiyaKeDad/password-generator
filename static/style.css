@@ -6,7 +6,7 @@
 
 body {
     font-family: "Montserrat", sans-serif;
-    background-color: lightblue;
+    background-color: rgb(254, 250, 224);
 }
 
 .container {
@@ -26,11 +26,30 @@ h1 {
     margin-bottom: 20px;
 }
 
-.result-container p {
+.result-container {
     background-color: rgb(211, 209, 209, 0.5);
     padding: 20px;
     min-width: 500px;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-container p {
+  flex-grow: 1;
+  font-size: 1.5rem;
+}
+
+.result-container i {
+    color: rgb(84, 83, 83);
+    font-size: 1.2rem;
+    padding: .2rem;
+}
+
+.result-container i:hover {
+    color: gray;
+    cursor: pointer;
 }
 
 .options-container h2 {
@@ -49,13 +68,16 @@ h1 {
 }
 
 button {
-    font-size: 2rem;
-    background-color: rgb(173, 216, 230);
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    background-color: rgb(204, 213, 174);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 button:hover {
-    background-color:rgb(173, 216, 230,0.5) ;
+    background-color:rgb(204, 213, 174, 0.8) ;
 }

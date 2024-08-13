@@ -11,6 +11,13 @@
     />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
     <!-- <link rel="stylesheet" href="../static/style.css" /> -->
@@ -21,17 +28,18 @@
     <div class="container">
       <header>
         <h1>
-          A no nonsense password generator to safehaurd your accounts from
-          hackers!
+          No nonsense password generator to secure your accounts from hackers!
         </h1>
         <p>
-          Use our online tool to create a secure password. We recommend at least
-          using 12 characters with numbers and symbols for the best protection.
+          Use our online tool to create a secure password. We recommend using at
+          least 12 characters with numbers and symbols for the best protection.
         </p>
       </header>
 
       <div class="result-container">
         <p id="passwordResult">generated password</p>
+        <i class="fa-regular fa-copy" id="copyButton"></i>
+        <i class="fa-solid fa-rotate" id="regenButton"></i>
       </div>
 
       <div class="options-container">
@@ -43,7 +51,7 @@
             <span id="passlenval">12</span>
             <input
               type="range"
-              min="1"
+              min="8"
               max="50"
               value="12"
               class="slider"

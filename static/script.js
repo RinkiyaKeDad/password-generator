@@ -39,3 +39,14 @@ document.addEventListener("DOMContentLoaded", function(event){
         console.log("Error generating password:", error);
     })
 });
+
+document.getElementById('copyButton').addEventListener('click', function (){
+    password = document.getElementById('passwordResult')
+    navigator.clipboard.writeText(password.innerText);
+})
+
+document.getElementById('regenButton').addEventListener('click', function(){
+    getPassword().catch(error => {
+        console.log("Error generating password:", error);
+    })
+})
