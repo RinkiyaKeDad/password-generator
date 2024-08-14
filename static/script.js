@@ -50,3 +50,20 @@ document.getElementById('regenButton').addEventListener('click', function(){
         console.log("Error generating password:", error);
     })
 })
+
+$(document).ready(function() {
+    let activeModals = 0;
+    $('.notice').click(function() {
+        if (activeModals < 1){
+            activeModals++;
+            new jBox('Notice', {
+                content: 'Copied!',
+                color: 'blue',
+                autoClose: 1500,
+                onCloseComplete: function (){
+                    activeModals--;
+                }
+            });
+        }
+    });
+});

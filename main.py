@@ -12,7 +12,6 @@ def index():
 @app.route('/generate-password', methods=['POST'])
 def generate_password():
     data = request.get_json()
-    print(data)
     length = int(data['length'])
     nums = bool(data['nums'])
     splchars = bool(data['splchars'])
@@ -21,7 +20,6 @@ def generate_password():
     spls = string.punctuation
     numbers =  string.digits 
 
-    print(characters)
     password = ''
     letterCount = 0
     numCount = 0
@@ -38,11 +36,6 @@ def generate_password():
     
     elif splchars:
         splcharCount = random.randint(1,length-1)
-
-    print(numCount)
-    print(splcharCount)
-    print(letterCount)
-    print(length)
 
     # generate password
     while numCount > 0:
@@ -61,8 +54,6 @@ def generate_password():
 
     # randomize the password
     password = ''.join(random.sample(password,len(password)))
-    print(password)
-
     return jsonify(password=password)
 
 if __name__ == '__main__':
